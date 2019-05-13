@@ -4,6 +4,10 @@ def NeedyInput(prompt, acceptable_responses):
         response = raw_input(prompt).lower()
         if response in acceptable_responses:
             return response
+        elif response == "list":
+            print "Acceptable inputs are: " + ", ".join(acceptable_responses)
+        elif response == "hello":
+            print "Hi!"
         else:
             print "Invalid input."
 
@@ -1210,7 +1214,7 @@ while True:
                         ["wir", "wires", "but", "button", "sym", "symbols", "sim", "simon", "wor", "words", "com",
                          "complicated",
                          "mem", "memory", "pas", "password", "seq", "sequence", "mor", "morse", "kno", "knob", "maz",
-                         "maze", "defused", "help", "list", "exploded"])
+                         "maze", "defused", "help", "exploded"])
     print "---------------------------"
     if module == "but" or module == "button":
         but_color = color_dict[
@@ -1249,8 +1253,6 @@ while True:
         print defuse_maze()
     elif module == "kno" or module == "knob":
         print defuse_knob()
-    elif module == "list":
-        print "Acceptable module inputs are: wir, but, sym, sim, wor, com, mem, pas, seq, mor, maz, and kno"
     elif module == "help":
         module_q_a()
     elif module == "defused":
